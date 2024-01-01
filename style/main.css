@@ -13,6 +13,7 @@ img{
     margin-left: auto;
     padding-left: 1em;
     padding-right: 1em;
+    max-width: 980px;
 }
 
 .header{
@@ -31,6 +32,7 @@ img{
     font-weight: bold;
     color: #fff;
     float: left;
+    text-align: right;
 }
 
 .header__nav{
@@ -289,7 +291,70 @@ img{
     text-decoration: none;
 }
 
+.footer__logo{
+    text-transform: uppercase;
+}
 
+/*RESPONSIVIDADE*/
+@media screen and (min-width: 1024px){
+    .header{
+        position: fixed;
+    }
+    
+    .logo-text{
+        width: 25%;
+        box-sizing: border-box;
+    }
+    
+    .header__btnMenu{
+        display: none;
+    }
+    
+    .header__nav{
+        float: left;
+        width: 75%;
+        clear: none;
+        max-width: 800px;
+    }
+    
+    .header__nav ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .header__nav li{
+        border-bottom: none;
+        flex-grow: 1;
+    }
+    
+    .header__nav a{
+        background: white;        
+    }
+    
+    .people-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+    }
+    
+    .content .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+    
+    .last-articles__thumbs{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .footer .container{
+        display: flex;
+    }
+    
+    .footer .container > * {
+        margin: 1.5em;
+    }
+}
 
 
 
