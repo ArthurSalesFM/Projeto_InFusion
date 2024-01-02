@@ -5,11 +5,10 @@ body{
 }
 
 img{
-   max-width: 100%; 
+    max-width: 100%;
 }
-
 .container{
-    margin-right: auto;
+    margin-right: auto;    
     margin-left: auto;
     padding-left: 1em;
     padding-right: 1em;
@@ -19,6 +18,12 @@ img{
 .header{
     background: #fff;
     width: 100%;
+}
+
+.js .header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .logo-text{
@@ -44,14 +49,14 @@ img{
     padding: 0;
 }
 
-.header__nav li{
+.header__nav li {
     list-style-type: none;
-    background: #242a2c;
+    background: #242c2c;
     text-align: center;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);        
+    border-bottom: 1px dotted rgba(255,255,255, 0.2);
 }
 
-.header__nav a{
+.header__nav a {
     text-decoration: none;
     text-transform: uppercase;
     color: #586165;
@@ -59,29 +64,122 @@ img{
     font-weight: 600;
     display: block;
     padding: 25px 0;
-    transition: .5s ease;
+    transition: .8s ease;
 }
 
-.header__nav a:hover{
-    color: #63c6ae;
+.header__nav a:hover {
+    color: #63c6ae;   
 }
 
 .header__btnMenu{
-    
+    float: right;
+    margin: 1.5em;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+}
+
+.js .header__nav{
+    transition: max-height 1s;
+}
+
+.js .laptop-slider{
+    overflow: hidden;
+    color: white;
+}
+
+.js .laptop-slider .slideshow{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    max-width: 950px;
+}
+
+.js .laptop-slider figure{
+    opacity: 0;
+    transition: 1s opacity;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;    
+}
+
+.js .laptop-slider figure.show{
+    opacity: 1;
+    position: static;    
+}
+
+.js .laptop-slider .prev, .js .laptop-slider .next{
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.js .laptop-slider .prev{
+    left: 10px;
+}
+
+.js .laptop-slider .next{
+    right: 10px;
+}
+
+.js .quote-slideshow{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    max-width: 950px;
+    box-sizing: border-box;
+    padding: 0 50px;
+    color: white;
+}
+
+.js .quote-slideshow figure h2{
+    margin-top: 0;
+}
+
+.js .quote-slideshow figure{
+    opacity: 0;
+    transition: 1s opacity;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    right: 50px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.js .quote-slideshow figure.show{
+    opacity: 1;
+    position: static;    
+}
+
+.js .quote-slideshow .prev, .js .quote-slideshow .next{
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.js .quote-slideshow .prev{
+    left: 10px;
+}
+
+.js .quote-slideshow .next{
+    right: 10px;
 }
 
 .hero{
     height: 80vh;
     padding: 40px 20px;
-    text-align: center;    
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /*Criando o triangulo embaixo da imagem de fundo*/
-    background: linear-gradient(45deg, white 50%, transparent 50%) left calc(50% + 20px) bottom no-repeat,
-                linear-gradient(-45deg, white 50%, transparent 50%) left calc(50% - 20px) bottom no-repeat,
+    background: linear-gradient(45deg, white 50%, transparent 50%) left calc(50% + 20px) bottom no-repeat, 
+                linear-gradient(-45deg, white 50%, transparent 50%) left calc(50% - 20px) bottom no-repeat, 
                 url(../img/01.jpg);
     background-size: 40px 40px, 40px 40px, cover;
 }
@@ -104,7 +202,7 @@ img{
 }
 
 .hero__btn{
-    border: 1px solid rgba(255,255,255, .3);
+    border: 1px solid rgba(255,255,255,.3);
     background-color: rgba(0,0,0,.2);
     border-radius: 5px;
     padding: 15px 25px;
@@ -118,10 +216,6 @@ img{
 
 .people-cards{
     margin-top: 2.5em;
-}
-
-.people-cards__card{
-    
 }
 
 .people-cards__card:hover{
@@ -139,7 +233,7 @@ img{
 }
 
 .people-cards__image{
-    width: 100%;    
+    width: 100%;
 }
 
 .people-cards__avatar{
@@ -163,7 +257,7 @@ img{
 
 .people-cards__text{
     color: #929da5;
-    font-size: 14px;
+    font-size: 14px;    
 }
 
 .content{
@@ -201,7 +295,7 @@ img{
 }
 
 .button-primary{
-    background-color: #63c6ae;
+    background-color: #69c6ae;
     color: white;
 }
 
@@ -227,6 +321,7 @@ img{
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 0;
+    background: yellow;
 }
 
 .last-articles__thumbs img{
@@ -241,19 +336,18 @@ img{
     overflow: auto;
 }
 
-/*Para não mostrar todas as imagens do carrosel de uma vez, segue os comando abaixo, colocando a barra de rolagem na div*/
-.slidershow{
+.slideshow{
     white-space: nowrap;
 }
 
-.slidershow figure{
+.slideshow figure{
     display: inline-block;
 }
 
 .quote-container{
     background-color: #63c6ae;
     padding: 50px 0;
-    border-bottom: 12px solid #58b9a1;
+    border-bottom: 12px solid #48b9a1;
 }
 
 .quote-slideshow h2{
@@ -295,7 +389,6 @@ img{
     text-transform: uppercase;
 }
 
-/*RESPONSIVIDADE*/
 @media screen and (min-width: 1024px){
     .header{
         position: fixed;
@@ -322,7 +415,7 @@ img{
         justify-content: space-around;
     }
     
-    .header__nav li{
+    .header__nav li {
         border-bottom: none;
         flex-grow: 1;
     }
@@ -331,12 +424,13 @@ img{
         background: white;        
     }
     
+    
     .people-cards{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
     }
-    
+        
     .content .container{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -355,10 +449,3 @@ img{
         margin: 1.5em;
     }
 }
-
-
-
-
-
-
-
