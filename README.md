@@ -1,4 +1,3 @@
-Projeto Final.
 # Projeto InFusion - Projeto final do curso (ser frontend)
 
 **Desenvolvido por** *Arthur Felipe MS*
@@ -10,4 +9,3 @@ Projeto Final.
 * *HTML 5*
 * *CSS 3*
 * *JavaScript*
-
